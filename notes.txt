@@ -1,0 +1,85 @@
+###############   POWERSHELL  ###############
+
+python --version
+
+python -m venc .venv
+.\.venv\Scripts\Activate
+ctrl+shift+P -> Python: Select Interpreter
+deactivate - deactivate venv
+
+clear/cls
+ls
+pwd - present working directory
+mkdir <folder>
+cd <folder>
+
+pip install ipython - for command line python statements
+
+------------ Initial setup ------------
+1. Create .venv
+2. Create .gitignore (paste template)
+3. Create requrements.txt (paste template) - amend defaults
+4. Create Makefile (paste template) - amend defaults
+5. Create README.mk
+6. Create a src directory
+7. Create a test directory
+8. Create a notes.txt (paste a template)
+9. Create a new github repo - DO NOT add a .gitignore or README
+10. Create initial git, commit and push
+
+Extra
+11. Create a .devcontainer file with template pasted
+12. Create a .yml for github Actions / CI/CD integration
+
+ -----------  GIT  -----------------
+
+# 1. Initialize the repo (only once per project)
+git init -b main   # -b main sets the default branch to main (instead of master)
+
+# 2. Check what’s being tracked
+git status
+
+# 3. Stage files
+git add .
+
+# 4. Commit files
+git commit -m "Initial commit"
+
+# 5. Connect to your GitHub repo
+git remote add origin https://github.com/MichaelD1976/xxxxxxxxxx.git
+
+# 6. Push to GitHub for the first time
+git push -u origin main
+
+
+rm -r -fo .git  - reset git
+
+----------------------------------------
+
+
+pip install <package>
+pip freezer > requirements.txt
+pip install -r requirements.txt
+
+---------------------------------------
+
+API keys/ Secrets
+create a .env file
+Add:
+API_KEY=your_api_key_here
+SECRET_KEY=another_secret
+
+make sure .env is in .gitignore
+
+To read in:
+from dotenv import load_dotenv
+import os
+load_dotenv()  # loads variables from .env into environment
+api_key = os.getenv("API_KEY")
+
+
+############  BASH  ########################
+make lint
+make install
+make format
+make test
